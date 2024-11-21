@@ -1,7 +1,7 @@
-# Proxmox LXC Resize Script
+# Proxmox LXC Shrink Root Disk Script
 
 ## Overview
-This script provides an automated way to resize the disk space of a Proxmox LXC container. It ensures the process is simple, efficient, and minimizes manual steps. **Use at your own risk**, and always ensure you have proper backups before resizing any containers.
+This script provides an automated way to shrink the root disk of a Proxmox LXC container. It ensures the process is simple, efficient, and minimizes manual steps. **Use at your own risk**, and always ensure you have proper backups before resizing any containers.
 
 ---
 
@@ -48,6 +48,8 @@ chmod +x shrink_container.sh
 ## Notes
 - The script assumes the default LVM storage layout (`/dev/pve`). Modify it if your setup differs.
 - Tested using PVE 8.2.7
+- To fix the warning below, I had to backup and restore the LXC. If you know a better way to fix it, please commit the change or let me know.
+	- "WARNING: Thin volume pve/vm-100-disk-0 maps X while the size is only X."
 
 ---
 
