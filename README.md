@@ -31,7 +31,7 @@ cd proxmoxShrinkCT
 
 2. Make the script executable:
 ```
-chmod +x shrink_container.sh
+chmod +x shrinkContainer.sh
 ```
 
 3. Run the script:
