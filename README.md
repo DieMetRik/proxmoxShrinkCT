@@ -2,6 +2,7 @@
 
 ## Overview
 This script provides an automated way to shrink the root disk of a Proxmox LXC container. It ensures the process is simple, efficient, and minimizes manual steps. **Use at your own risk**, and always ensure you have proper backups before resizing any containers.
+This was created for containers only. I'm unsure if it would work for VM.
 
 ---
 
