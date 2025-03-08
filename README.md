@@ -24,7 +24,7 @@ This was created for containers only. I'm unsure if it would work for VM.
 ---
 
 ## How to Use
-1. Clone this repository:
+1. Clone this repository (you must have git installed, or you can download and transfer manually to your server):
 ```
 git clone https://github.com/mchiappinam/proxmoxShrinkCT.git
 cd proxmoxShrinkCT
