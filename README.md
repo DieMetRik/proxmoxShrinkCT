@@ -36,7 +36,7 @@ chmod +x shrinkContainer.sh
 
 3. Run the script:
 ```
-./shrink_container.sh
+./shrinkContainer.sh
 ```
 
 4. Follow the prompts:
@@ -55,7 +55,7 @@ chmod +x shrinkContainer.sh
 
 ## Example Output
 ```
-user@proxmox:~# ./shrink_container.sh 
+user@proxmox:~# ./shrinkContainer.sh
      #############################################
      #                                           #
      #      Script powered by Chiappina.com      #
