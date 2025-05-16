@@ -9,7 +9,7 @@ echo
 echo "     Disclaimer: Use this script at your own risk!     "
 echo "Always ensure you have proper backups before proceeding."
 echo
-sleep 2
+sleep 1
 
 #Prompt user for VMID and new size
 echo "Fetching container list..."
