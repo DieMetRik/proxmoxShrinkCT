@@ -43,11 +43,11 @@ if [[ -z "$LV_PATH" ]]; then
     exit 1
 fi
 
-# Извлекаем VG и LV
+# Get VG and LV
 vg_name=$(basename "$(dirname "$LV_PATH")")
 lv_name=$(basename "$LV_PATH")
 
-# Выводим результат
+# echo VG and LV
 echo "VG: $vg_name"
 echo "LV: $lv_name"
 
