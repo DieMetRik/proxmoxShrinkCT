@@ -37,11 +37,20 @@ fi
 
 #Find and display the LV path
 echo "Finding logical volume path for VMID $VMID..."
-LV_PATH=$(lvdisplay | grep -A1 "vm-$VMID-disk-0" | grep "LV Path" | grep -v snap | awk '{print $3}')
+LV_PATH=$(lvdisplay | grep -A1 "vm-$VMID-disk-" | grep "LV Path" | grep -v snap | awk '{print $3}')
 if [[ -z "$LV_PATH" ]]; then
     echo "Failed to find LV path. Exiting."
     exit 1
 fi
+
+# Извлекаем VG и LV
+vg_name=$(basename "$(dirname "$LV_PATH")")
+lv_name=$(basename "$LV_PATH")
+
+# Выводим результат
+echo "VG: $vg_name"
+echo "LV: $lv_name"
+
 echo "LV Path: $LV_PATH"
 
 #Activate the logical volume
@@ -76,7 +85,7 @@ if [[ ! -f "$CONF_FILE" ]]; then
 fi
 
 echo "Updating container configuration file $CONF_FILE..."
-sed -i "s|rootfs:.*|rootfs: local-lvm:vm-$VMID-disk-0,size=$NEW_SIZE|" "$CONF_FILE"
+sed -i "s|rootfs:.*|rootfs: $vg_name:$lv_name,size=$NEW_SIZE|" "$CONF_FILE"
 if [[ $? -ne 0 ]]; then
     echo "Failed to update container configuration. Exiting."
     exit 1
